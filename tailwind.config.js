@@ -9,7 +9,7 @@ module.exports = {
       {
         mytheme: {
 
-          "primary": "#0FCFEC",
+          "primary": "black",
 
           "secondary": "#19D3AE",
 
