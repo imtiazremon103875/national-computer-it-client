@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Monitor",
+        "image": "https://images-na.ssl-images-amazon.com/images/I/714mr6GxecL.jpg",
+        "description": "this high quality plasma monitor",
+        "minimumOderQuantity": 1000,
+        "availableQuantity": 50000,
+        "price": 8000
+    },
+    {
+        "name": "Mouse",
+        "image": "https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/l/2/l20m01.jpg",
+        "description": "this is high quality mouse.it has different type featurer.",
+        "minimumOderQuantity": 2000,
+        "availableQuantity": 75000,
+        "price": 800
+    },
+    {
+        "name": "Gaming Keyboard",
+        "image": "https://thermaltake.azureedge.net/pub/media/catalog/product/cache/6bf0ed99c663954fafc930039201ed07/l/2/l20gt01_1.jpg",
+        "description": "this high quality gaming keyboard.we can easily use this",
+        "minimumOderQuantity": 800,
+        "availableQuantity": 10000,
+        "price": 1500
+    },
+    {
+        "name": "128 GB pen drive",
+        "image": "https://m.media-amazon.com/images/I/61DjwgS4cbL._SX679_.jpg",
+        "description": "it has 2 year warrenty..very easy to use",
+        "minimumOderQuantity": 1500,
+        "availableQuantity": 70000,
+        "price": 1600
+    },
+    {
+        "name": "CD drive",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/7/70/Sony_CRX310S-Internal-PC-DVD-Drive-Opened.jpg",
+        "description": "this CD drive support all kind of cd disk",
+        "minimumOderQuantity": 1200,
+        "availableQuantity": 60000,
+        "price": 3000
+    },
+    {
+        "name": "Ram 8GB",
+        "image": "https://www.computerhope.com/jargon/m/memory-ddr4.png",
+        "description": "This is ddr4 ram..",
+        "minimumOderQuantity": 1400,
+        "availableQuantity": 80000,
+        "price (per unit)": 2500
+    },
+    {
+        "name": "SSD 512 GB",
+        "image": "https://i.pcmag.com/imagery/roundups/01DFW4JD82CfkmpyGTIHYQ1-49.fit_lim.size_1050x.jpg",
+        "description": "This is m.2 SSD for fasting computer ",
+        "minimumOderQuantity": 1100,
+        "availableQuantity": 20000,
+        "price": 4000
+    },
+    {
+        "name": "Joystick",
+        "image": "https://www.ubuy.com.bd/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNjFuUGo3UmItNEwuX1NMMTEwMF8uanBn.jpg",
+        "description": "this product is use for control game in pc",
+        "minimumOderQuantity": 1800,
+        "availableQuantity": 25000,
+        "price": 800
+    },
+    {
+        "name": "MotherBoard",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Computer-motherboard.jpg",
+        "description": "This is Very fast motherboard for any cpu",
+        "minimumOderQuantity": 500,
+        "availableQuantity": 1200,
+        "price": 8000
+    },
+    {
+        "name": "RTX 2080 GPU",
+        "image": "https://www.pcworld.com/wp-content/uploads/2021/09/7j8a3205-100895097-orig.jpg?quality=50&strip=all",
+        "description": "Very high frame rate Graphics card for Desktop...",
+        "minimumOrderQuantity": 200,
+        "availableQuantity": 1000,
+        "price": 16000
+    }
+]
