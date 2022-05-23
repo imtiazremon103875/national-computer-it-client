@@ -1,16 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import auth from '../../firebase.init'
 import Loading from '../Shared/Loading';
+import useToken from '../../Hook/useToken';
 
 const Login = () => {
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    const { register, formState: { errors }, handleSubmit } = useForm();
 
+
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
+    const { register, formState: { errors }, handleSubmit } = useForm();
 
     const [
         signInWithEmailAndPassword,
@@ -18,12 +22,21 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [token] = useToken(user || gUser)
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         console.log(data)
         signInWithEmailAndPassword(data.email, data.password)
 
     };
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true })
+        }
+    }, [token, from, navigate])
+
+
     if (loading || gLoading) {
         return <Loading></Loading>
     }
@@ -89,7 +102,7 @@ const Login = () => {
 
                         <input className='btn btn-primary  w-full max-w-xs' value="LOG In" type="submit" />
                     </form>
-                    <p><small>New To Doctor Portal? <Link to="/register"><span className='text-primary'>Create An Account</span></Link></small></p>
+                    <p><small>New To national it portal? <Link to="/register"><span className='text-primary'>Create An Account</span></Link></small></p>
 
 
 

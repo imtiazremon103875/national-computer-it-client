@@ -9,7 +9,7 @@ const Header = () => {
     const navigate = useNavigate()
     const logOut = () => {
         signOut(auth)
-        navigate("/login")
+        localStorage.removeItem("accessToken")
 
     }
 

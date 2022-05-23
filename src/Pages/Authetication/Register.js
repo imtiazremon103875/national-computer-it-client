@@ -3,17 +3,23 @@ import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import useToken from '../../Hook/useToken';
+
 
 const Register = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
+
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth)
+    const [token] = useToken(user || gUser)
+    const navigate = useNavigate();
+
     if (loading || gLoading) {
         return <Loading></Loading>
     }
@@ -21,9 +27,12 @@ const Register = () => {
     const onSubmit = async data => {
         console.log(data)
         await createUserWithEmailAndPassword(data.email, data.password)
-
-
     };
+
+
+    if (token) {
+        navigate('/home')
+    }
     let errorElement
     if (error || gError) {
         errorElement = <p className='text-red-500'> {error?.message} || {gError?.message} </p>
