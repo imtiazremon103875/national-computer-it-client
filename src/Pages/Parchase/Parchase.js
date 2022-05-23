@@ -72,9 +72,9 @@ const Parchase = () => {
     }
     return (
         <div className='px-6'>
-            <div class="card  bg-base-200 shadow-xl ">
+            <div className="card  bg-base-200 shadow-xl ">
                 <figure><img className='w-44' src={image} alt="Album" /></figure>
-                <div class="card-body text-center">
+                <div className="card-body text-center">
                     <h2 >{name}</h2>
                     <p><span className='font-bold'>Description:</span> {description}</p>
                     <p> <span className='font-bold'>Minimum Order quantity: </span>{minimumOderQuantity}</p>
@@ -84,21 +84,21 @@ const Parchase = () => {
                 </div>
             </div>
 
-            <div class="my-10">
+            <div className="my-10">
 
-                <h3 class="font-bold text-lg  text-primary text-center">Booking for: {name}</h3>
+                <h3 className="font-bold text-lg  text-primary text-center">Booking for: {name}</h3>
 
                 <form onSubmit={handleOrder} className='grid grid-cols-1 gap-4  justify-items-center mt-2' >
 
 
-                    <input type="text" name='name' disabled value={user?.displayName} class="input input-bordered w-full max-w-xs" required />
-                    <input type="email" name="email" disabled value={user?.email} class="input input-bordered w-full max-w-xs" required />
-                    <input type="text" name="phone" placeholder="Phone Number" class="input input-bordered w-full max-w-xs" required />
+                    <input type="text" name='name' disabled value={user?.displayName} className="input input-bordered w-full max-w-xs" required />
+                    <input type="email" name="email" disabled value={user?.email} className="input input-bordered w-full max-w-xs" required />
+                    <input type="text" name="phone" placeholder="Phone Number" className="input input-bordered w-full max-w-xs" required />
                     {errorMessage && <div className="error"> {errorMessage} </div>}
 
-                    <input type="number" onChange={handleQuantity} name="quantity" placeholder="quantity" class="input input-bordered w-full max-w-xs" required />
-                    <input type="number" value={totalPrice} readOnly name="totalprice" placeholder="Total price" class="input input-bordered w-full max-w-xs" required />
-                    {errorMessage ? <input type="submit" placeholder="Submit" disabled class="btn btn-primary w-full max-w-xs" /> : <input type="submit" placeholder="Submit" class="btn btn-primary w-full max-w-xs" />}
+                    <input type="number" onChange={handleQuantity} name="quantity" placeholder="quantity" className="input input-bordered w-full max-w-xs" required />
+                    <input type="number" value={totalPrice} readOnly name="totalprice" placeholder="Total price" className="input input-bordered w-full max-w-xs" required />
+                    {errorMessage ? <input type="submit" placeholder="Submit" disabled className="btn btn-primary w-full max-w-xs" /> : <input type="submit" placeholder="Submit" className="btn btn-primary w-full max-w-xs" />}
                 </form>
 
             </div>

@@ -38,8 +38,8 @@ const Business = () => {
                     <p className='text-3xl mt-4 text-accent'>Don't hasitate to contact us?</p>
                 </div>
                 <div className='lg-w-1/2 lg:flex justify-evenly w-full'>
-                    <button class="btn btn-active btn-accent md:block mb-5 mr-5">Contact Us </button>
-                    <button class="btn btn-active btn-secondary md:block "> Give Feedback</button>
+                    <button className="btn btn-active btn-accent md:block mb-5 mr-5">Contact Us </button>
+                    <button className="btn btn-active btn-secondary md:block "> Give Feedback</button>
                 </div>
 
             </div>
