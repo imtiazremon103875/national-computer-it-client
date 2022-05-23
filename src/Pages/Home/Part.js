@@ -15,7 +15,7 @@ const Part = ({ part }) => {
                 <p><span className='font-bold'>Description:</span> {description}</p>
                 <p> <span className='font-bold'>Minimum Order quantity: </span>{minimumOderQuantity}</p>
                 <p> <span className='font-bold'>Available Quantity:</span>{availableQuantity}</p>
-                <p> <span className='font-bold'>Available Quantity:</span>{price}</p>
+                <p> <span className='font-bold'>price  (per unit):</span>{price}</p>
                 <p></p>
                 <div class="card-actions justify-center ">
                     <button onClick={handleBook} class="btn btn-primary">Book now</button>

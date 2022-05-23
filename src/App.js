@@ -6,7 +6,7 @@ import Register from './Pages/Authetication/Register';
 import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home';
 import Header from './Pages/Shared/Header';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Parchase from './Pages/Parchase/Parchase';
 import RequiredAuth from './Pages/Authetication/RequiredAuth';
@@ -23,7 +23,7 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/parchase/:id' element={<RequiredAuth><Parchase></Parchase></RequiredAuth>}></Route>
       </Routes>
-
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
