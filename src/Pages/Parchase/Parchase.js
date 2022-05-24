@@ -30,6 +30,7 @@ const Parchase = () => {
         event.preventDefault();
         const order = {
             product: name,
+            image,
             customer: user.displayName,
             email: user.email,
             quantity: event.target.quantity.value,
