@@ -1,39 +1,38 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import OrdersRaw from './OrdersRaw';
+import { useQuery } from 'react-query';
+import Loading from "../Shared/Loading"
+import DeleteProduct from './DeleteProduct';
 
 const MyOrders = () => {
-    const [orders, setOrders] = useState([])
-
-
+    const [deleteProduct, setDeleteProduct] = useState(null)
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        if (user) {
-            fetch(`http://localhost:5000/order?email=${user.email}`, {
-                headers: {
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                },
-            })
-                .then(res => {
-                    if (res.status === 401 || res.status === 403) {
-                        signOut(auth)
-                        localStorage.removeItem('accessToken')
-                        navigate('/login')
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/order?email=${user.email}`, {
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        },
+    })
+        .then(res => {
+            if (res.status === 401 || res.status === 403) {
+                signOut(auth)
+                localStorage.removeItem('accessToken')
+                navigate('/login')
 
-                    }
-                    return res.json()
-                })
-                .then(data => setOrders(data))
-        }
+            }
+            return res.json()
+        }))
 
-    }, [user, navigate])
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     return (
         <div>
@@ -55,12 +54,15 @@ const MyOrders = () => {
                     <tbody>
 
                         {
-                            orders.map((order, index) => <OrdersRaw key={index} index={index} order={order}></OrdersRaw>)
+                            orders.map((order, index) => <OrdersRaw key={index} index={index} order={order} setDeleteProduct={setDeleteProduct}></OrdersRaw>)
                         }
                     </tbody>
 
                 </table>
             </div>
+            {
+                deleteProduct && <DeleteProduct deleteProduct={deleteProduct} setDeleteProduct={setDeleteProduct} refetch={refetch}></DeleteProduct>
+            }
         </div>
     );
 };

@@ -2,7 +2,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-const OrdersRaw = ({ order, index }) => {
+const OrdersRaw = ({ order, index, setDeleteProduct }) => {
     return (
         <tr>
             <td>{index + 1}</td>
@@ -23,7 +23,7 @@ const OrdersRaw = ({ order, index }) => {
             <td>{order.quantity}</td>
             <td>{order.totalPrice}</td>
             <th>
-                <FontAwesomeIcon icon={faTrash} />
+                <label onClick={() => setDeleteProduct(order)} htmlFor='delete-modal'><FontAwesomeIcon icon={faTrash} /></label>
             </th>
             <th><button className='btn btn-xs font-bold'>pay</button></th>
         </tr>
