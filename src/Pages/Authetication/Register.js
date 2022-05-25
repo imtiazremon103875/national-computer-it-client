@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 import { Link, useNavigate } from 'react-router-dom';
@@ -16,17 +16,20 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth)
+    ] = useCreateUserWithEmailAndPassword(auth);
+    const [updateProfile, updating, UError] = useUpdateProfile(auth);
     const [token] = useToken(user || gUser)
     const navigate = useNavigate();
 
-    if (loading || gLoading) {
+    if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
+
 
     const onSubmit = async data => {
         console.log(data)
         await createUserWithEmailAndPassword(data.email, data.password)
+        await updateProfile({ displayName: data.name });
     };
 
 
@@ -34,14 +37,9 @@ const Register = () => {
         navigate('/home')
     }
     let errorElement
-    if (error || gError) {
-        errorElement = <p className='text-red-500'> {error?.message} || {gError?.message} </p>
+    if (error || gError || UError) {
+        errorElement = <p className='text-red-500'> {error?.message} || {gError?.message} || {UError?.message} </p>
     }
-
-
-
-
-
 
     return (
         <div className='flex justify-center items-center h-screen'>
