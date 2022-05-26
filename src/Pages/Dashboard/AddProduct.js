@@ -63,7 +63,7 @@ const AddProduct = () => {
                 <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-4  justify-items-center mt-2' >
                     <input type="text" name='name' placeholder='Name' className="input input-bordered w-full max-w-xs" required />
                     <input onChange={handleImage} type="file" name='image' className="input input-bordered w-full max-w-xs" required />
-                    <textarea placeholder=" Give  Description" name='description' class="textarea textarea-bordered w-80" required></textarea>
+                    <textarea placeholder=" Give  Description" name='description' className="textarea textarea-bordered w-80" required></textarea>
                     <input type="text" name='price' placeholder='Price' className="input input-bordered w-full max-w-xs" required />
                     <input type="text" name='available' placeholder='Avilable quantity' className="input input-bordered w-full max-w-xs" required />
                     <input type="text" name='minimum' placeholder='Minimum quantity' className="input input-bordered w-full max-w-xs" required />

@@ -22,13 +22,13 @@ const DeleteProduct = ({ deleteProduct, setDeleteProduct, refetch, API }) => {
     }
     return (
         <div>
-            <input type="checkbox" id="delete-modal" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
+            <input type="checkbox" id="delete-modal" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
                     <h3 className='font-bold text-lg'>Are You Sure Want to Delete this product?</h3>
-                    <div class="modal-action">
+                    <div className="modal-action">
                         <button onClick={handleDelete} className='btn btn-error'> Delete</button>
-                        <label for="delete-modal" class="btn   btn-success">Cancel</label>
+                        <label htmlFor="delete-modal" className="btn   btn-success">Cancel</label>
                     </div>
                 </div>
             </div>

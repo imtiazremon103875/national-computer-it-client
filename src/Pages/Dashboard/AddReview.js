@@ -46,7 +46,7 @@ const AddReview = () => {
                     <input type="email" name="email" disabled value={user?.email} className="input input-bordered w-full max-w-xs" required />
 
 
-                    <textarea placeholder=" Give Review Description" name='reviewText' class="textarea textarea-bordered w-80" required></textarea>
+                    <textarea placeholder=" Give Review Description" name='reviewText' className="textarea textarea-bordered w-80" required></textarea>
                     <input type="text" name='star' placeholder='How many star you give  out of 5' className="input input-bordered w-full max-w-xs" required />
 
                     <input type="submit" placeholder="Submit" className="btn btn-primary w-full max-w-xs" />

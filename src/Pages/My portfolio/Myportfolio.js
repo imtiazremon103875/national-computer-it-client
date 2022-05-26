@@ -10,7 +10,7 @@ const Myportfolio = () => {
 
                 <div className="card w-72 bg-base-100 shadow-xl text-center ">
                     <figure className="px-10 pt-10">
-                        <img src={pic1} alt="Shoes" class="rounded-xl" />
+                        <img src={pic1} alt="Shoes" className="rounded-xl" />
                     </figure>
                     <div >
 

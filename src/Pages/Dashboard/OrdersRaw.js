@@ -1,21 +1,22 @@
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const OrdersRaw = ({ order, index, setDeleteProduct }) => {
     return (
         <tr>
             <td>{index + 1}</td>
             <td>
-                <div class="flex items-center space-x-3">
-                    <div class="avatar">
-                        <div class="mask mask-squircle w-12 h-12">
+                <div className="flex items-center space-x-3">
+                    <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12">
                             <img src={order.image} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>
                     <div>
-                        <div class="font-bold">{order.product}</div>
-                        <div class="text-sm opacity-50">{order.email}</div>
+                        <div className="font-bold">{order.product}</div>
+                        <div className="text-sm opacity-50">{order.email}</div>
                     </div>
                 </div>
             </td>
@@ -25,7 +26,7 @@ const OrdersRaw = ({ order, index, setDeleteProduct }) => {
             <th>
                 <label onClick={() => setDeleteProduct(order)} htmlFor='delete-modal'><FontAwesomeIcon icon={faTrash} /></label>
             </th>
-            <th><button className='btn btn-xs font-bold'>pay</button></th>
+            <th>{!order.paid ? <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs font-bold'>Pay</button></Link> : <button className='btn btn-xs font-bold'>Paid</button>}</th>
         </tr>
     );
 };

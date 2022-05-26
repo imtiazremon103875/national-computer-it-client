@@ -21,8 +21,8 @@ const ManageOrders = () => {
     return (
         <div>
             <h2 className='text-3xl text-center'>Manage All Orders</h2>
-            <div class="overflow-x-auto w-full">
-                <table class="table w-full">
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
 
                     <thead>
                         <tr>
@@ -33,6 +33,7 @@ const ManageOrders = () => {
                             <th>Total price </th>
                             <th>delete</th>
                             <th>status</th>
+                            <th>Change status</th>
                         </tr>
                     </thead>
                     <tbody>
