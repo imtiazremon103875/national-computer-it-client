@@ -1,10 +1,10 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const DeleteProduct = ({ deleteProduct, setDeleteProduct, refetch }) => {
-    const { _id, product } = deleteProduct;
+const DeleteProduct = ({ deleteProduct, setDeleteProduct, refetch, API }) => {
+    const { _id } = deleteProduct;
     const handleDelete = () => {
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`http://localhost:5000/${API}/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -25,7 +25,7 @@ const DeleteProduct = ({ deleteProduct, setDeleteProduct, refetch }) => {
             <input type="checkbox" id="delete-modal" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box">
-                    <h3 className='font-bold text-lg'>Are You Sure Want to Delete {product}</h3>
+                    <h3 className='font-bold text-lg'>Are You Sure Want to Delete this product?</h3>
                     <div class="modal-action">
                         <button onClick={handleDelete} className='btn btn-error'> Delete</button>
                         <label for="delete-modal" class="btn   btn-success">Cancel</label>

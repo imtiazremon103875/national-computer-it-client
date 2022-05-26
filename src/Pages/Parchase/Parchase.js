@@ -50,6 +50,8 @@ const Parchase = () => {
                 console.log(data)
                 if (data.insertedId) {
                     toast("your order is processing,please pay")
+                    event.target.reset()
+                    setTotalPrice('')
                 }
                 else {
                     toast('There is an problem in your order')

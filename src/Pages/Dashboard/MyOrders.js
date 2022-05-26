@@ -15,6 +15,7 @@ const MyOrders = () => {
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
 
+
     const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/order?email=${user.email}`, {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -61,7 +62,7 @@ const MyOrders = () => {
                 </table>
             </div>
             {
-                deleteProduct && <DeleteProduct deleteProduct={deleteProduct} setDeleteProduct={setDeleteProduct} refetch={refetch}></DeleteProduct>
+                deleteProduct && <DeleteProduct API='userProduct' deleteProduct={deleteProduct} setDeleteProduct={setDeleteProduct} refetch={refetch}></DeleteProduct>
             }
         </div>
     );

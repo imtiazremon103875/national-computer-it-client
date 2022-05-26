@@ -28,9 +28,9 @@ const AddProduct = () => {
                         name: event.target.name.value,
                         image: img,
                         description: event.target.description.value,
-                        availableQuantity: event.target.available.value,
-                        minimumOderQuantity: event.target.minimum.value,
-                        price: event.target.price.value
+                        availableQuantity: parseInt(event.target.available.value),
+                        minimumOderQuantity: parseInt(event.target.available.value),
+                        price: parseInt(event.target.price.value)
                     }
                     fetch('http://localhost:5000/product', {
                         method: 'POST',

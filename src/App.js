@@ -19,6 +19,8 @@ import Myportfolio from './Pages/My portfolio/Myportfolio';
 import ManageUsers from './Pages/Dashboard/ManageUsers';
 import RequiredAdmin from './Pages/Authetication/RequiredAdmin';
 import AddProduct from './Pages/Dashboard/AddProduct';
+import Manageproduct from './Pages/Dashboard/Manageproduct';
+import ManageOrders from './Pages/Dashboard/ManageOrders';
 
 function App() {
   return (
@@ -39,6 +41,8 @@ function App() {
           <Route path='myProfile' element={<MyProfile></MyProfile>}></Route>
           <Route path='users' element={<RequiredAdmin><ManageUsers></ManageUsers></RequiredAdmin>}></Route>
           <Route path='addProduct' element={<RequiredAdmin><AddProduct></AddProduct></RequiredAdmin>}></Route>
+          <Route path='manageProduct' element={<RequiredAdmin><Manageproduct></Manageproduct></RequiredAdmin>}></Route>
+          <Route path='manageOrders' element={<RequiredAdmin><ManageOrders></ManageOrders></RequiredAdmin>}></Route>
 
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
