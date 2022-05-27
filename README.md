@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# National computer It Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my website live link  [Create React App](https://github.com/facebook/create-react-app).
+
+# My website's different features & functionally
+
+* This we site has a home page,which has banner,header,footer,some parts
+* This website has login authentication system.
+* This website has payment gateway system.
+* This website has admin user dashboard system.
+* This website has email ,email password system
+* This website has jwt token system
 
 ## Available Scripts
 
