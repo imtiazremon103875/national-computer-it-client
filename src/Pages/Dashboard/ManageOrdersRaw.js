@@ -1,12 +1,14 @@
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ManageOrdersRaw = ({ order, index, setDeleteProduct }) => {
     const [status, setStatus] = useState("unpaid")
-    if (order.paid) {
-        setStatus('panding')
-    }
+    useEffect(() => {
+        if (order?.paid) {
+            setStatus('panding')
+        }
+    }, [order])
     return (
 
         <tr>

@@ -24,9 +24,15 @@ const OrdersRaw = ({ order, index, setDeleteProduct }) => {
             <td>{order.quantity}</td>
             <td>{order.totalPrice}</td>
             <th>
-                <label onClick={() => setDeleteProduct(order)} htmlFor='delete-modal'><FontAwesomeIcon icon={faTrash} /></label>
+                <label onClick={() => order.paid ? setDeleteProduct('') : setDeleteProduct(order)} htmlFor='delete-modal'><FontAwesomeIcon className={order.paid ? "opacity-25" : ""} icon={faTrash} /></label>
             </th>
-            <th>{!order.paid ? <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs font-bold'>Pay</button></Link> : <button className='btn btn-xs font-bold'>Paid</button>}</th>
+            <th>{!order.paid ? <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs font-bold'>Pay</button></Link> :
+
+                <div>
+                    <p> <span className='text-success'>paid</span></p>
+                    <p> transectionId: <span className='text-success'>{order.transectionId}</span></p>
+
+                </div>}</th>
         </tr>
     );
 };
