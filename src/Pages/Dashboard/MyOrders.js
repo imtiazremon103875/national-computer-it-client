@@ -16,7 +16,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
 
 
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/order?email=${user.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://protected-spire-73262.herokuapp.com/order?email=${user.email}`, {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         },

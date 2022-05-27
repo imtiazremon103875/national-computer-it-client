@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
     const [transectionId, setTransectionId] = useState('');
     const { _id, product, totalPrice, customer, email } = order
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://protected-spire-73262.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -72,7 +72,7 @@ const CheckoutForm = ({ order }) => {
                 transectionId: paymentIntent.id,
             }
 
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://protected-spire-73262.herokuapp.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

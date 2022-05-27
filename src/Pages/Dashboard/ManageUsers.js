@@ -5,7 +5,7 @@ import ManageUserRow from './ManageUserRow';
 
 const ManageUsers = () => {
     const { data: users, isLoading, refetch } = useQuery('users', () =>
-        fetch('http://localhost:5000/user', {
+        fetch('https://protected-spire-73262.herokuapp.com/user', {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }

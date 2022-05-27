@@ -7,7 +7,7 @@ import ManageOrdersRaw from './ManageOrdersRaw';
 const ManageOrders = () => {
     const [deleteProduct, setDeleteProduct] = useState(null)
     const { data: allOrders, isLoading, refetch } = useQuery(
-        "allOrders", () => fetch('http://localhost:5000/allOrders', {
+        "allOrders", () => fetch('https://protected-spire-73262.herokuapp.com/allOrders', {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },

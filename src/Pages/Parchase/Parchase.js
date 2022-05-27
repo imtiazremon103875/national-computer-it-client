@@ -17,7 +17,7 @@ const Parchase = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/part/${id}`, {
+        fetch(`https://protected-spire-73262.herokuapp.com/part/${id}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
@@ -38,7 +38,7 @@ const Parchase = () => {
             phone: event.target.phone.value,
         }
         console.log(order)
-        fetch('http://localhost:5000/order', {
+        fetch('https://protected-spire-73262.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

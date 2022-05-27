@@ -32,7 +32,7 @@ const AddProduct = () => {
                         minimumOderQuantity: parseInt(event.target.available.value),
                         price: parseInt(event.target.price.value)
                     }
-                    fetch('http://localhost:5000/product', {
+                    fetch('https://protected-spire-73262.herokuapp.com/product', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

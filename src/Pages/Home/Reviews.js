@@ -2,11 +2,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
-import { faCoffee, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 const Reviews = () => {
     const { data: reviews, isLoading } = useQuery('reviews',
-        () => fetch(`http://localhost:5000/review`, {
+        () => fetch(`https://protected-spire-73262.herokuapp.com/review`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }

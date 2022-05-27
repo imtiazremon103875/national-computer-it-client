@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L3mclFFT9gx8s0EvyPZ9hFxhXeb5osg8wP1T
 const Payment = () => {
     const { id } = useParams();
 
-    const url = `http://localhost:5000/order/${id}`
+    const url = `https://protected-spire-73262.herokuapp.com/order/${id}`
     const { data: order, isLoading } = useQuery(['paymentOrder', id], () => fetch(url, {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

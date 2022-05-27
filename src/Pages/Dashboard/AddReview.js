@@ -14,7 +14,7 @@ const AddReview = () => {
             ratings: event.target.star.value,
 
         }
-        fetch(`http://localhost:5000/review`, {
+        fetch(`https://protected-spire-73262.herokuapp.com/review`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
